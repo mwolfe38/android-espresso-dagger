@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "18.1.1"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 18
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:+'
+    debugCompile 'com.squareup.dagger:dagger-compiler:1.1.0'
+    debugCompile 'com.squareup.dagger:dagger:1.1.0'
+    releaseCompile 'com.squareup.dagger:dagger-compiler:1.1.0'
+    releaseCompile 'com.squareup.dagger:dagger:1.1.0'
+    instrumentTestCompile files('libs/espresso-1.0-SNAPSHOT.jar',
+            'libs/testrunner-1.0-SNAPSHOT.jar',
+            'libs/testrunner-runtime-1.0-SNAPSHOT.jar')
+    // instrumentTestCompile 'com.squareup.dagger:dagger-compiler:1.1.0'
+    instrumentTestCompile 'com.squareup.dagger:dagger:1.1.0'
+    instrumentTestCompile 'org.hamcrest:hamcrest-all:1.3'
+    instrumentTestCompile 'com.google.guava:guava:15.0'
+}
