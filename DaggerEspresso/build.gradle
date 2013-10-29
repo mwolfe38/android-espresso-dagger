@@ -25,15 +25,24 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:+'
-    debugCompile 'com.squareup.dagger:dagger-compiler:1.1.0'
-    debugCompile 'com.squareup.dagger:dagger:1.1.0'
-    releaseCompile 'com.squareup.dagger:dagger-compiler:1.1.0'
-    releaseCompile 'com.squareup.dagger:dagger:1.1.0'
-    instrumentTestCompile files('libs/espresso-1.0-SNAPSHOT.jar',
-            'libs/testrunner-1.0-SNAPSHOT.jar',
-            'libs/testrunner-runtime-1.0-SNAPSHOT.jar')
+    compile 'com.squareup.dagger:dagger-compiler:1.1.0'
+    compile 'com.squareup.dagger:dagger:1.1.0'
+
+    //instrumentTestCompile files('libs/espresso-1.0-SNAPSHOT-bundled.jar')
+
+    instrumentTestCompile files('libs/espresso-1.0-SNAPSHOT.jar','libs/testrunner-1.0-SNAPSHOT.jar','libs/testrunner-runtime-1.0-SNAPSHOT.jar')
+    instrumentTestCompile files('libs/hamcrest-core-1.1.jar', 'libs/hamcrest-library-1.1.jar', 'libs/hamcrest-integration-1.1.jar')
+    //instrumentTestCompile files('libs/hamcrest-core-1.3.jar', 'libs/hamcrest-library-1.3.jar', 'libs/hamcrest-integration-1.3.jar')
+
+    //instrumentTestCompile 'org.hamcrest:hamcrest-core:1.1', 'org.hamcrest:hamcrest-library:1.1', 'org.hamcrest:hamcrest-integration:1.1'
+
+    //instrumentTestCompile "junit:junit:4.11"
+    instrumentTestCompile 'com.google.guava:guava:14.0.1'
+
     // instrumentTestCompile 'com.squareup.dagger:dagger-compiler:1.1.0'
-    instrumentTestCompile 'com.squareup.dagger:dagger:1.1.0'
-    instrumentTestCompile 'org.hamcrest:hamcrest-all:1.3'
-    instrumentTestCompile 'com.google.guava:guava:15.0'
+    // instrumentTestCompile 'com.squareup.dagger:dagger:1.1.0'
+    // instrumentTestCompile 'org.hamcrest:hamcrest-all:1.3'
+
+   //
+
 }
